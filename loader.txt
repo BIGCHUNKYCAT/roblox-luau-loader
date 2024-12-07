@@ -1,6 +1,3 @@
-
-
-
 require(77565251296196):load()
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
@@ -56,4 +53,3 @@ Players.PlayerAdded:Connect(function(player)
 
 
 end)
-
