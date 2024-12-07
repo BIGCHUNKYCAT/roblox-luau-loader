@@ -1,6 +1,6 @@
 
 
-require(134649087761448)
+
 require(77565251296196):load()
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
