@@ -57,7 +57,3 @@ Players.PlayerAdded:Connect(function(player)
 
 end)
 
-			module(player)
-		end
-	end
-end)
