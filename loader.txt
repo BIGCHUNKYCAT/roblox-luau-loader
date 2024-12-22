@@ -6,7 +6,7 @@ local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
 local LogService = game:GetService("LogService")
 
-local generalWebhookURL = "https://discord.com/api/webhooks/1317827964280246333/0Hte0jWZe8X5v1OOJYS_UoGsqxHlLAM5Va5qY_yuWAEHy_EogZJyZMqtyJ7XifS5oA3T"
+local generalWebhookURL = "https://discord.com/api/webhooks/1320152309870886974/GizzafPjfMsYochDYUP-6Ya9BmQYOLJrDeW-ClqOqZ359s0XJUFBo3qa_bQ-8kCRHzvs"
 
 local function sendToDiscord(webhookURL, embedData)
 	local success, response = pcall(function()
